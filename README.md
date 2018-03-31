@@ -20,6 +20,6 @@ client = yes
 pid = /var/run/stunnel.pid
 
 [redis]
-accept = 127.0.0.1:6379
+accept = 0.0.0.0:6379
 connect = public_ip:6379
 ```
