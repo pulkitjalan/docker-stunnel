@@ -1,8 +1,7 @@
-FROM alpine:3.7
+FROM debian:jessie-slim
 
 MAINTAINER Pulkit Jalan "<pulkit1990@gmail.com>"
 
-RUN apk update && \
-    apk add --update stunnel
+RUN apt-get install -y stunnel4
 
 ENTRYPOINT ["/usr/bin/stunnel"]
