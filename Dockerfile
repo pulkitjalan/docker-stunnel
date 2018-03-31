@@ -1,8 +1,8 @@
-FROM debian:jessie-slim
+FROM alpine:3.7
 
 MAINTAINER Pulkit Jalan "<pulkit1990@gmail.com>"
 
-RUN apt-get update && \
-    apt-get install -y stunnel4
+RUN apk add --no-cache stunnel
 
 ENTRYPOINT ["/usr/bin/stunnel"]
+CMD ["/etc/stunnel/stunnel.conf"]

@@ -1,4 +1,4 @@
-# Stunnel Docker
+# Stunnel Alpine Docker
 
 ## Usage
 
