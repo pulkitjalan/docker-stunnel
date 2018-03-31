@@ -5,4 +5,3 @@ MAINTAINER Pulkit Jalan "<pulkit1990@gmail.com>"
 RUN apk add --no-cache stunnel
 
 ENTRYPOINT ["/usr/bin/stunnel"]
-CMD ["/etc/stunnel/stunnel.conf"]

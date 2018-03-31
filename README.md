@@ -10,3 +10,16 @@ docker run -d \
  -p HOST_PORT:CONTAINER_PORT \
   pulkitjalan/stunnel:latest
 ```
+
+## Sample Config
+
+```
+cert = /etc/stunnel/private.pem
+foreground = yes
+client = yes
+pid = /var/run/stunnel.pid
+
+[redis]
+accept = 127.0.0.1:6379
+connect = public_ip:6379
+```
