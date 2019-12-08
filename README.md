@@ -2,24 +2,15 @@
 
 ## Usage
 
+Required ENV vars:
+
+ACCEPT_STRING - local listening ip and port
+CONNECT_STRING - Remote connection host and port
+
 ```sh
 docker run -d \
- --name stunnel-x \
- -v /local/path/to/{PRIVATE_KEY}:/etc/stunnel/{PRIVATE_KEY} \
- -v /local/path/to/{STUNNEL_CONFIG}:/etc/stunnel/{STUNNEL_CONFIG} \
- -p HOST_PORT:CONTAINER_PORT \
+ --name stunnel-redis \
+ -e ACCEPT_STRING=127.0.0.1:6379 \
+ -e CONNECT_STRING=10.0.0.123:6379 \
   pulkitjalan/stunnel:latest
-```
-
-## Sample Config
-
-```
-cert = /etc/stunnel/private.pem
-foreground = yes
-client = yes
-pid = /var/run/stunnel.pid
-
-[redis]
-accept = 0.0.0.0:6379
-connect = public_ip:6379
 ```

@@ -1,7 +1,10 @@
-FROM alpine:3.7
+FROM alpine:3.10
 
 MAINTAINER Pulkit Jalan "<pulkit1990@gmail.com>"
 
-RUN apk add --no-cache stunnel
+RUN apk add --update stunnel ca-certificates
 
-ENTRYPOINT ["/usr/bin/stunnel"]
+ADD ./stunnel.sh /stunnel.sh
+RUN chmod +x /stunnel.sh
+
+ENTRYPOINT ["/stunnel.sh"]
